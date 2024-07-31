@@ -23,4 +23,21 @@ jobs:
               uses: actions/setup-node@v4.0.3
 
             - name: Check prettier
+              id: prettier
+              continue-on-error: true
               run: npx prettier --check .
+
+            - name: Show diff if not formatted correctly
+              if: steps.prettier.outcome == 'failure'
+              run: git diff && exit 1
+    # fix:
+    #     runs-on: ubuntu-latest
+    #     permissions:
+    #         contents: write
+    #     steps:
+    #         - uses: actions/checkout@v3
+    #         - uses: actions/setup-node@v3
+    #         - run: npx prettier --write .
+    #         - run: git add --all
+    #         - run: git diff --exit-code
+    #         - run: git commit -m "Fix formatting"
