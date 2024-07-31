@@ -1,8 +1,12 @@
-type externalThemes = [{ name: string; fileContents: string; }]
+type externalThemes = [{ name: string; fileContents: string }];
 export default async function setupThemes() {
-	const externalThemes: externalThemes = JSON.parse(localStorage.getItem("externalThemes")!);
+	const externalThemes: externalThemes = JSON.parse(
+		localStorage.getItem("externalThemes")!,
+	);
 	const select = document.querySelector("select")!;
-	const importedGroup = select.querySelector("optgroup#themes-imported-group")!;
+	const importedGroup = select.querySelector(
+		"optgroup#themes-imported-group",
+	)!;
 	for (const externalTheme of externalThemes) {
 		const option = document.createElement("option");
 		const name = externalTheme.name;

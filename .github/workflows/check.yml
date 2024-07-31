@@ -24,15 +24,15 @@ jobs:
 
             - name: Check prettier
               run: |
-                npx prettier --check .
-                # check if the exit code is 1
-                # if the exit code is 0, it means there are no formatting issues
-                if [ $? -ne 0 ]; then
-                    # if the exit code is 1, it means there are formatting issues,
-                    # so format the code and show the diff
-                    npx prettier --write .
-                    git diff
-                fi
+                  npx prettier --check .
+                  # check if the exit code is 1
+                  # if the exit code is 0, it means there are no formatting issues
+                  if [ $? -ne 0 ]; then
+                      # if the exit code is 1, it means there are formatting issues,
+                      # so format the code and show the diff
+                      npx prettier --write .
+                      git diff
+                  fi
 
     # fix:
     #     runs-on: ubuntu-latest
