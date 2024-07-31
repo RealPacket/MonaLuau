@@ -23,13 +23,17 @@ jobs:
               uses: actions/setup-node@v4.0.3
 
             - name: Check prettier
-              id: prettier
-              continue-on-error: true
-              run: npx prettier --check .
+              run: |
+                npx prettier --check .
+                # check if the exit code is 1
+                # if the exit code is 0, it means there are no formatting issues
+                if [ $? -ne 0 ]; then
+                    # if the exit code is 1, it means there are formatting issues,
+                    # so format the code and show the diff
+                    npx prettier --write .
+                    git diff
+                fi
 
-            - name: Show diff if not formatted correctly
-              if: steps.prettier.outcome == 'failure'
-              run: git diff && exit 1
     # fix:
     #     runs-on: ubuntu-latest
     #     permissions:
