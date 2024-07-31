@@ -4,7 +4,8 @@ const checkJsonFile = async (file: string) => {
 
 	if (
 		!("$schema" in data) ||
-		("$schema" in data && data["$schema"] !== "./data/schemas/Theme.schema.json")
+		("$schema" in data &&
+			data["$schema"] !== "./data/schemas/Theme.schema.json")
 	) {
 		data["$schema"] = "./data/schemas/Theme.schema.json";
 	}
