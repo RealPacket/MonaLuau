@@ -3,6 +3,7 @@
 Working on MonaLuau.
 This is a work in progress project for adding Luau support for Monaco, specifically for Roblox exploits.
 Check [Progress](#progress) for support info.
+This project is licensed under AGPL, see [LICENSE.md](LICENSE.md) for details.
 
 ## Progress
 
