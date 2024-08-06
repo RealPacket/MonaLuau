@@ -14,8 +14,8 @@ Check [Progress](#progress) for support info.
 - [ ] Auto-Complete
   - [ ] Basic Auto-Complete via dumps.
   - [ ] Method to modify the auto-complete for adding exploit-specific functions.
-  - [ ] Some way later to get auto-complete for game instances.
   - [ ] Auto-Complete based on current code and context (e.g. local variables).
+  - [ ] Some way later to get auto-complete for game instances.
 - [ ] Other nice things
   - [ ] StyLua integration for formatting
   - [ ] full-moon integration for syntax highlighting and extended Auto-Complete functionality.
