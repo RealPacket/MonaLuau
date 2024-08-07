@@ -8,6 +8,7 @@ import wasm from "vite-plugin-wasm";
 export default defineConfig({
 	build: {
 		target: "esnext", //browsers can handle the latest ES features
+		sourcemap: true
 	},
 	plugins: [
 		wasm() // needed for StyLua (formatter), and probably later for full-moon (Luau parser)
