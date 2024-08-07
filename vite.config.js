@@ -1,4 +1,5 @@
 import { defineConfig } from "vite";
+import wasm from "vite-plugin-wasm";
 
 // https://stackoverflow.com/questions/72618944/get-error-to-build-my-project-in-vite-top-level-await-is-not-available-in-the
 // seriously, screw your IE 11, why would we want to support it?
@@ -8,4 +9,7 @@ export default defineConfig({
 	build: {
 		target: "esnext", //browsers can handle the latest ES features
 	},
+	plugins: [
+		wasm() // needed for StyLua (formatter), and probably later for full-moon (Luau parser)
+	]
 });
