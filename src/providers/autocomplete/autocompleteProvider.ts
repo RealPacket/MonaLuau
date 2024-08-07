@@ -6,7 +6,7 @@ export const autoCompleteProvider: monaco.languages.CompletionItemProvider = {
 		// TODO: auto complete not implemented yet.
 		console.log("TODO: provideCompletionItems");
 		return {
-			suggestions: [],
+			suggestions: []
 		};
-	},
+	}
 };

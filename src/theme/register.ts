@@ -1,7 +1,7 @@
 export async function initThemes() {
 	const select = document.querySelector("select")!;
 	const importedGroup = select.querySelector(
-		"optgroup#themes-imported-group",
+		"optgroup#themes-imported-group"
 	)!;
 	/**
 	 * @param {string[]} themes A list of theme file names.

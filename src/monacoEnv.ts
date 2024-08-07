@@ -28,6 +28,6 @@ export function initEnv() {
 				default:
 					return new editorWorker();
 			}
-		},
+		}
 	};
 }

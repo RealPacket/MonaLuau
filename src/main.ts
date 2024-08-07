@@ -31,21 +31,21 @@ monaco.editor.defineTheme("krnlLight", {
 		{
 			token: "keyword.local",
 			foreground: "#997BD6",
-			fontStyle: "italic",
+			fontStyle: "italic"
 		},
 		{ token: "keyword.operator", foreground: "#89DDFF" },
 		{
 			token: "keyword.operator.type.annotation",
-			foreground: "#9ABDF5",
+			foreground: "#9ABDF5"
 		},
 		{
 			token: "keyword.operator.typedef.annotation",
-			foreground: "#89DDFF",
+			foreground: "#89DDFF"
 		},
 		{
 			token: "keyword.control.export",
 			foreground: "#997BD6",
-			fontStyle: "italic",
+			fontStyle: "italic"
 		},
 
 		{ token: "operator", foreground: "#89DDFF" },
@@ -63,27 +63,27 @@ monaco.editor.defineTheme("krnlLight", {
 		{
 			token: "comment.highlight.title",
 			foreground: "#89DDFF",
-			fontStyle: "italic",
+			fontStyle: "italic"
 		},
 		{
 			token: "comment.highlight.name",
 			foreground: "#89DDFF",
-			fontStyle: "italic",
+			fontStyle: "italic"
 		},
 		{
 			token: "comment.delimiter.modifier",
 			foreground: "#9ABDF5",
-			fontStyle: "italic",
+			fontStyle: "italic"
 		},
 		{
 			token: "comment.highlight.modifier",
 			foreground: "#7DCFFF",
-			fontStyle: "italic",
+			fontStyle: "italic"
 		},
 		{
 			token: "comment.highlight.descriptor",
 			foreground: "#F7768E",
-			fontStyle: "italic",
+			fontStyle: "italic"
 		},
 
 		{ token: "delimiter.longstring", foreground: "#89DDFF" },
@@ -103,11 +103,11 @@ monaco.editor.defineTheme("krnlLight", {
 		{ token: "punctuation.definition.block", foreground: "#9ABDF5" },
 		{
 			token: "punctuation.definition.parameters",
-			foreground: "#9ABDF5",
+			foreground: "#9ABDF5"
 		},
 		{
 			token: "punctuation.definition.typeparameters",
-			foreground: "#89DDFF",
+			foreground: "#89DDFF"
 		},
 
 		{ token: "constant.language", foreground: "#FF9E64" },
@@ -116,7 +116,7 @@ monaco.editor.defineTheme("krnlLight", {
 
 		{ token: "support.function", foreground: "#0f7688" },
 		{ token: "support.function.library", foreground: "#0f7688" },
-		{ token: "support.type", foreground: "#5ab6d6" },
+		{ token: "support.type", foreground: "#5ab6d6" }
 	],
 	colors: {
 		"editor.background": "#ffffff",
@@ -132,8 +132,8 @@ monaco.editor.defineTheme("krnlLight", {
 		"editorSuggestWidget.selectedBackground": "#b9b1b1",
 		"editorSuggestWidget.highlightForeground": "#18A0FB",
 
-		"textCodeBlock.background": "#ffffff",
-	},
+		"textCodeBlock.background": "#ffffff"
+	}
 });
 //#endregion
 //#region Dark theme (Krnl)
@@ -153,21 +153,21 @@ monaco.editor.defineTheme("krnlDark", {
 		{
 			token: "keyword.local",
 			foreground: "#997BD6",
-			fontStyle: "italic",
+			fontStyle: "italic"
 		},
 		{ token: "keyword.operator", foreground: "#89DDFF" },
 		{
 			token: "keyword.operator.type.annotation",
-			foreground: "#9ABDF5",
+			foreground: "#9ABDF5"
 		},
 		{
 			token: "keyword.operator.typedef.annotation",
-			foreground: "#89DDFF",
+			foreground: "#89DDFF"
 		},
 		{
 			token: "keyword.control.export",
 			foreground: "#997BD6",
-			fontStyle: "italic",
+			fontStyle: "italic"
 		},
 
 		{ token: "operator", foreground: "#89DDFF" },
@@ -185,27 +185,27 @@ monaco.editor.defineTheme("krnlDark", {
 		{
 			token: "comment.highlight.title",
 			foreground: "#89DDFF",
-			fontStyle: "italic",
+			fontStyle: "italic"
 		},
 		{
 			token: "comment.highlight.name",
 			foreground: "#89DDFF",
-			fontStyle: "italic",
+			fontStyle: "italic"
 		},
 		{
 			token: "comment.delimiter.modifier",
 			foreground: "#9ABDF5",
-			fontStyle: "italic",
+			fontStyle: "italic"
 		},
 		{
 			token: "comment.highlight.modifier",
 			foreground: "#7DCFFF",
-			fontStyle: "italic",
+			fontStyle: "italic"
 		},
 		{
 			token: "comment.highlight.descriptor",
 			foreground: "#F7768E",
-			fontStyle: "italic",
+			fontStyle: "italic"
 		},
 
 		{ token: "delimiter.longstring", foreground: "#89DDFF" },
@@ -228,11 +228,11 @@ monaco.editor.defineTheme("krnlDark", {
 		{ token: "punctuation.definition.block", foreground: "#9ABDF5" },
 		{
 			token: "punctuation.definition.parameters",
-			foreground: "#9ABDF5",
+			foreground: "#9ABDF5"
 		},
 		{
 			token: "punctuation.definition.typeparameters",
-			foreground: "#89DDFF",
+			foreground: "#89DDFF"
 		},
 
 		{ token: "constant.language", foreground: "#FF9E64" },
@@ -244,7 +244,7 @@ monaco.editor.defineTheme("krnlDark", {
 		{ token: "support.type", foreground: "#0DB9D7" },
 		{ token: "support.function", foreground: "#0DB9D7" },
 		{ token: "support.function.library", foreground: "#0DB9D7" },
-		{ token: "support.type", foreground: "#5ab6d6" },
+		{ token: "support.type", foreground: "#5ab6d6" }
 	],
 	colors: {
 		// "editor.background": "#222222",
@@ -263,8 +263,8 @@ monaco.editor.defineTheme("krnlDark", {
 		"editorSuggestWidget.selectedBackground": "#363636",
 		"editorSuggestWidget.highlightForeground": "#18A0FB",
 
-		"textCodeBlock.background": "#181818",
-	},
+		"textCodeBlock.background": "#181818"
+	}
 });
 //#endregion
 //#endregion
@@ -280,7 +280,7 @@ monaco.editor.create(document.querySelector("#monaco")!, {
 	dragAndDrop: true,
 	minimap: {
 		renderCharacters: false,
-		scale: 100,
+		scale: 100
 	},
 	showFoldingControls: "always",
 	smoothScrolling: true,
@@ -292,9 +292,9 @@ monaco.editor.create(document.querySelector("#monaco")!, {
 	formatOnPaste: true,
 	showDeprecated: true,
 	suggest: {
-		snippetsPreventQuickSuggestions: true,
+		snippetsPreventQuickSuggestions: true
 	},
 	padding: {
-		top: 24,
-	},
+		top: 24
+	}
 });

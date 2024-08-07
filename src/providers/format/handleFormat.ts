@@ -7,7 +7,7 @@ import {
 	OutputVerification,
 	QuoteStyle,
 	SortRequiresConfig,
-	Range,
+	Range
 } from "@johnnymorganz/stylua";
 import positionToByteOffset from "./byteOffset";
 import * as monaco from "monaco-editor";
@@ -16,7 +16,7 @@ export const formatter: monaco.languages.DocumentFormattingEditProvider = {
 	displayName: "StyLua",
 	provideDocumentFormattingEdits(
 		model: monaco.editor.ITextModel,
-		options: monaco.languages.FormattingOptions,
+		options: monaco.languages.FormattingOptions
 	) {
 		const text = model.getValue();
 		const sortRequiresConfig = new SortRequiresConfig();
@@ -37,16 +37,16 @@ export const formatter: monaco.languages.DocumentFormattingEditProvider = {
 			text,
 			config,
 			undefined,
-			OutputVerification.None,
+			OutputVerification.None
 		);
 
 		return [
 			{
 				range: model.getFullModelRange(),
-				text: formatted,
-			},
+				text: formatted
+			}
 		];
-	},
+	}
 };
 
 export const rangeFormatter: monaco.languages.DocumentRangeFormattingEditProvider =
@@ -55,7 +55,7 @@ export const rangeFormatter: monaco.languages.DocumentRangeFormattingEditProvide
 		provideDocumentRangeFormattingEdits(
 			model: monaco.editor.ITextModel,
 			range: monaco.Range,
-			options: monaco.languages.FormattingOptions,
+			options: monaco.languages.FormattingOptions
 		) {
 			const text = model.getValue();
 			const sortRequiresConfig = new SortRequiresConfig();
@@ -75,26 +75,26 @@ export const rangeFormatter: monaco.languages.DocumentRangeFormattingEditProvide
 			const styluaRange = new Range(); // note: this is StyLua range, not DOM Range.
 			styluaRange.start = positionToByteOffset(
 				model,
-				range.getStartPosition(),
+				range.getStartPosition()
 			);
 			styluaRange.end = positionToByteOffset(
 				model,
-				range.getEndPosition(),
+				range.getEndPosition()
 			);
 			const formatted = formatCode(
 				text,
 				config,
 				styluaRange,
-				OutputVerification.None,
+				OutputVerification.None
 			);
 
 			return [
 				{
 					range: model.getFullModelRange(),
-					text: formatted,
-				},
+					text: formatted
+				}
 			];
-		},
+		}
 	};
 
 export default formatter;

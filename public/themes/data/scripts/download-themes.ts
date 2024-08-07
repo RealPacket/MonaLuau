@@ -6,21 +6,21 @@ const archiveUrl =
 const buffer = await (await fetch(archiveUrl)).arrayBuffer();
 await Deno.writeFile(
 	`${Deno.cwd()}\\monaco-themes.zip`,
-	new Uint8Array(buffer),
+	new Uint8Array(buffer)
 );
 
 await decompress(
 	`${Deno.cwd()}\\monaco-themes.zip`,
-	`${Deno.cwd()}\\monaco-themes`,
+	`${Deno.cwd()}\\monaco-themes`
 );
 // we won't use this any-more, so we'll delete it.
 await Deno.remove(`${Deno.cwd()}\\monaco-themes.zip`);
 
 console.log(
-	"Decompression completed successfully! Now we'll enumerate through every theme in the themes folder.",
+	"Decompression completed successfully! Now we'll enumerate through every theme in the themes folder."
 );
 for await (const entry of Deno.readDir(
-	`${Deno.cwd()}\\monaco-themes\\monaco-themes-master\\themes`,
+	`${Deno.cwd()}\\monaco-themes\\monaco-themes-master\\themes`
 )) {
 	if (!entry.isFile || !entry.name.endsWith(".json")) continue;
 

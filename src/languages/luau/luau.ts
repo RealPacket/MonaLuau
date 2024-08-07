@@ -8,7 +8,7 @@ import * as monaco from "monaco-editor";
 export const conf: monaco.languages.LanguageConfiguration = {
 	comments: {
 		lineComment: "--",
-		blockComment: ["--[[", "]]"],
+		blockComment: ["--[[", "]]"]
 	},
 	brackets: [
 		["{", "}"],
@@ -17,14 +17,14 @@ export const conf: monaco.languages.LanguageConfiguration = {
 		["do", "end"],
 		["then", "end"],
 		["repeat", "until"],
-		["function", "end"],
+		["function", "end"]
 	],
 
 	indentationRules: {
 		increaseIndentPattern:
 			/(((else|function|then|do|repeat)((?!(end|until)\\b).)*)|(\\{\\s*))$/,
 		decreaseIndentPattern:
-			/^\\s*((\\b(elseif|else|end|until)\\b)|(\\})|(\\))\)/,
+			/^\\s*((\\b(elseif|else|end|until)\\b)|(\\})|(\\))\)/
 	},
 	autoClosingPairs: [
 		{ open: "{", close: "}" },
@@ -32,7 +32,7 @@ export const conf: monaco.languages.LanguageConfiguration = {
 		{ open: "(", close: ")" },
 		{ open: '"', close: '"' },
 		{ open: "'", close: "'" },
-		{ open: "`", close: "`" },
+		{ open: "`", close: "`" }
 	],
 	surroundingPairs: [
 		{ open: "{", close: "}" },
@@ -45,7 +45,7 @@ export const conf: monaco.languages.LanguageConfiguration = {
 		{ open: "if", close: "end" },
 		{ open: "for", close: "end" },
 		{ open: "function", close: "end" },
-		{ open: "`", close: "`" },
+		{ open: "`", close: "`" }
 	],
 	folding: {
 		markers: {
@@ -54,9 +54,9 @@ export const conf: monaco.languages.LanguageConfiguration = {
 				/^\\s*\/\/\\s*(?:(?:#?region\\b)|(?:<editor-fold\\b))/,
 			end:
 				// new RegExp("^\\s*//\\s*(?:(?:#?endregion\\b)|(?:</editor-fold>))"),
-				/^\\s*\/\/\\s*(?:(?:#?endregion\\b)|(?:<\/editor-fold>))/,
-		},
-	},
+				/^\\s*\/\/\\s*(?:(?:#?endregion\\b)|(?:<\/editor-fold>))/
+		}
+	}
 };
 
 export const language: monaco.languages.IMonarchLanguage = {
@@ -64,13 +64,13 @@ export const language: monaco.languages.IMonarchLanguage = {
 	tokenPostfix: ".lua",
 	keywords:
 		"and break continue do else elseif end for function if in local not or repeat return then until while next type".split(
-			" ",
+			" "
 		),
 	constants: "true false nil".split(" "),
 	brackets: [
 		{ token: "delimiter.bracket", open: "{", close: "}" },
 		{ token: "delimiter.array", open: "[", close: "]" },
-		{ token: "delimiter.parenthesis", open: "(", close: ")" },
+		{ token: "delimiter.parenthesis", open: "(", close: ")" }
 	],
 	globals: [
 		//#region basic
@@ -118,7 +118,7 @@ export const language: monaco.languages.IMonarchLanguage = {
 		"getupvalues",
 		//#endregion
 		//#region string
-		"string",
+		"string"
 		//#endregion
 	],
 	operators: [
@@ -137,7 +137,7 @@ export const language: monaco.languages.IMonarchLanguage = {
 		"-=",
 		"*=",
 		"/=",
-		"..=",
+		"..="
 	],
 	special_operators: ["==", "~=", "<=", ">=", "<", ">", "->"],
 	// we include these common regular expressions
@@ -158,27 +158,27 @@ export const language: monaco.languages.IMonarchLanguage = {
 			[
 				/(?=(function)(\s+[a-zA-Z_][a-zA-Z0-9_]*[\.:][a-zA-Z_][a-zA-Z0-9_]*)(\<.+\>)(\())/,
 				"",
-				"@function_decl",
+				"@function_decl"
 			],
 			[
 				/(?=(function)(\s+[a-zA-Z_][a-zA-Z0-9_]*[\.:][a-zA-Z_][a-zA-Z0-9_]*\s*)(\())/,
 				"",
-				"@function_decl",
+				"@function_decl"
 			],
 			[
 				/(?=(function)(\s+[a-zA-Z_][a-zA-Z0-9_]*)(\<.+\>)(\())/,
 				"",
-				"@function_decl",
+				"@function_decl"
 			],
 			[
 				/(?=(function)(\s+[a-zA-Z_][a-zA-Z0-9_]*\s*)(\())/,
 				"",
-				"@function_decl",
+				"@function_decl"
 			],
 			[
 				/(?=(function)(\s+[a-zA-Z_][a-zA-Z0-9_]*\s*)(\())/,
 				"",
-				"@function_decl",
+				"@function_decl"
 			],
 			[/(?=(function)(\())/, "", "@function_decl"],
 
@@ -186,29 +186,29 @@ export const language: monaco.languages.IMonarchLanguage = {
 			[/(?<![^.]\.|:)\b(self)\b/, "variable.language.self"],
 			[
 				/(?<![^.]\.|:)\b(workspace|game|script|plugin|shared|_G|_VERSION|math\.(pi|huge))\b|(?<![.])\.{3}(?!\.)/,
-				"constant.language",
+				"constant.language"
 			],
 			[
 				/(?<![^.]\.|:)\b(assert|collectgarbage|error|getfenv|getmetatable|ipairs|loadstring|next|pairs|pcall|print|rawequal|rawget|rawset|require|select|setfenv|setmetatable|tonumber|tostring|type|unpack|xpcall|typeof|wait|delay|settings|elapsedTime|tick|time|warn|spawn|newproxy|UserSettings)\b(?=\s*(?:[({\"']|\[\[))/,
-				"support.function",
+				"support.function"
 			],
 			[
 				/(?<![^.]\.|:)\b(cache\.(iscached|replace|invalidate))|(coroutine\.(create|resume|running|status|wrap|yield|isyieldable)|string\.(byte|char|dump|find|format|gmatch|gsub|len|lower|match|rep|reverse|sub|upper|split|packsize|pack|unpack)|table\.(concat|insert|maxn|remove|sort|create|find|foreach|foreachi|getn|move|pack|unpack|clear)|math\.(abs|acos|asin|atan2?|ceil|cosh?|deg|exp|floor|fmod|frexp|ldexp|log|log10|max|min|modf|pow|rad|random|randomseed|tointeger|type|ult|noise|clamp|sign|sinh?|sqrt|tanh?|round)|io\.(close|flush|input|lines|open|output|popen|read|tmpfile|type|write)|os\.(clock|date|difftime|execute|exit|getenv|remove|rename|setlocale|time|tmpname)|package\.(cpath|loaded|loadlib|path|preload|seeall)|debug\.(debug|[gs]etfenv|[gs]ethook|getinfo|[gs]etlocal|[gs]etmetatable|getregistry|[gs]etupvalue|traceback|profileend|profilebegin)|utf8\.(char|codes|codepoint|len|offset|graphemes|charpattern|nfcnormalize|nfdnormalize)|bit32\.(arshift|band|bnot|bor|btest|bxor|extract|lrotate|lshift|replace|rrotate|rshift))\b(?=\s*(?:[({\"']|\[\[))/,
-				"support.function.library",
+				"support.function.library"
 			],
 			[
 				/\b(Axes|BrickColor|CFrame|Color3|ColorSequence|ColorSequenceKeypoint|DateTime|DockWidgetPluginGuiInfo|Faces|Instance|NumberRange|NumberSequence|NumberSequenceKeypoint|PathWaypoint|PhysicalProperties|Random|Ray|RaycastParams|Rect|Region3|Region3int16|TweenInfo|UDim|UDim2|Vector2|Vector2int16|Vector3|Vector3int16|Drawing|Krnl|task)\b/,
-				"support.type",
+				"support.type"
 			],
 			[/\b(local|type)\b/, "keyword.local"],
 			[
 				/\b(and|break|continue|do|else|elseif|end|for|function|if|in|local|not|or|repeat|return|then|until|while|next)\b/,
-				"keyword",
+				"keyword"
 			],
 
 			[
 				/\b([a-zA-Z_][a-zA-Z0-9_]*)\b(?=\s*(?:[({\"']|\[\[))/,
-				"entity.name.function",
+				"entity.name.function"
 			],
 			[/\b([A-Z_][A-Z0-9_]*)\b/, "variable.other.constant"],
 
@@ -220,16 +220,16 @@ export const language: monaco.languages.IMonarchLanguage = {
 					"",
 					"variable.other.enummember.lua",
 					"",
-					"variable.other.enummember.lua",
-				],
+					"variable.other.enummember.lua"
+				]
 			],
 			[
 				/(Enum)(\.)(\w*)/,
 				[
 					"variable.other.enummember.lua",
 					"",
-					"variable.other.enummember.lua",
-				],
+					"variable.other.enummember.lua"
+				]
 			],
 
 			// Type declarations:
@@ -245,9 +245,9 @@ export const language: monaco.languages.IMonarchLanguage = {
 						"@keywords": { token: "keyword.$0" },
 						"@constants": { token: "constants.$0" },
 						"@globals": { token: "global" },
-						"@default": "identifier",
-					},
-				},
+						"@default": "identifier"
+					}
+				}
 			],
 
 			// whitespace
@@ -257,7 +257,7 @@ export const language: monaco.languages.IMonarchLanguage = {
 			[
 				/(?=(\.+[a-zA-Z_][a-zA-Z0-9_]*))(?!(\.+[a-zA-Z_][a-zA-Z0-9_]*)\()/,
 				"",
-				"@index",
+				"@index"
 			],
 
 			// keys
@@ -277,9 +277,9 @@ export const language: monaco.languages.IMonarchLanguage = {
 					cases: {
 						"@operators": "operator",
 						"@special_operators": "operator.special",
-						"@default": "",
-					},
-				},
+						"@default": ""
+					}
+				}
 			],
 			// numbers
 			[/(@digits)[eE]([\-+]?(@digits))?/, "number.float"],
@@ -293,7 +293,7 @@ export const language: monaco.languages.IMonarchLanguage = {
 			// strings: recover on non-terminated strings
 			[/"([^"\\]|\\.)*$/, "string.invalid"],
 			[/'([^'\\]|\\.)*$/, "string.invalid"],
-			[/`([^`\\]|\\.)*$/, "string.invalid"],
+			[/`([^`\\]|\\.)*$/, "string.invalid"]
 		],
 
 		regexp: [
@@ -302,8 +302,8 @@ export const language: monaco.languages.IMonarchLanguage = {
 				[
 					"regexp.escape.control",
 					"regexp.escape.control",
-					"regexp.escape.control",
-				],
+					"regexp.escape.control"
+				]
 			],
 			[
 				/(\[)(\^?)(?=(?:[^\]\\\/]|\\.)+)/,
@@ -311,13 +311,13 @@ export const language: monaco.languages.IMonarchLanguage = {
 					"regexp.escape.control",
 					{
 						token: "regexp.escape.control",
-						next: "@regexrange",
-					},
-				],
+						next: "@regexrange"
+					}
+				]
 			],
 			[
 				/(\()(\?:|\?=|\?!)/,
-				["regexp.escape.control", "regexp.escape.control"],
+				["regexp.escape.control", "regexp.escape.control"]
 			],
 			[/[()]/, "regexp.escape.control"],
 			[/@regexpctl/, "regexp.escape.control"],
@@ -330,17 +330,17 @@ export const language: monaco.languages.IMonarchLanguage = {
 					{
 						token: "regexp",
 						bracket: "@close",
-						next: "@pop",
+						next: "@pop"
 					},
-					"keyword.other",
-				],
-			],
+					"keyword.other"
+				]
+			]
 		],
 
 		// Safe symbols:
 		index: [
 			[/\.[^a-zA-Z_]/, "", "@pop"],
-			[/[a-zA-Z_][a-zA-Z0-9_]*/, "variable.property", "@pop"],
+			[/[a-zA-Z_][a-zA-Z0-9_]*/, "variable.property", "@pop"]
 		],
 
 		// Tables & type tables:
@@ -350,12 +350,12 @@ export const language: monaco.languages.IMonarchLanguage = {
 			[/\b[a-zA-Z_][a-zA-Z0-9_]*\b\s*/, "entity.name.type.alias"],
 			[/\</, "punctuation.definition.typeparameters", "@type_group"],
 			[/\s*=\s*{/, "@rematch", "@table_type_elements_popall"],
-			[/./, "", "@pop"], // Dip if a character is untracked
+			[/./, "", "@pop"] // Dip if a character is untracked
 		],
 		table_type_elements_popall: [
 			[
 				/(\s*=\s*)({)/,
-				["keyword.operator", "punctuation.definition.block"],
+				["keyword.operator", "punctuation.definition.block"]
 			], // Consume ' - {' character
 
 			[/"([^"\\]|\\.)*$/, "string.invalid"],
@@ -372,7 +372,7 @@ export const language: monaco.languages.IMonarchLanguage = {
 			[/[,\;]/, "punctuation.separator.table"],
 
 			[/}/, "punctuation.definition.block", "@popall"],
-			{ include: "@whitespace" },
+			{ include: "@whitespace" }
 		],
 		table_type_elements: [
 			[/"([^"\\]|\\.)*$/, "string.invalid"],
@@ -390,7 +390,7 @@ export const language: monaco.languages.IMonarchLanguage = {
 			[/[,\;]/, "punctuation.separator.table"],
 
 			[/}/, "punctuation.definition.block", "@pop"],
-			{ include: "@whitespace" },
+			{ include: "@whitespace" }
 		],
 
 		// Functions & types:
@@ -401,18 +401,18 @@ export const language: monaco.languages.IMonarchLanguage = {
 				[
 					"entity.name.function",
 					"punctuation.separator.parameter",
-					"entity.name.function",
-				],
+					"entity.name.function"
+				]
 			],
 			[/\s+[a-zA-Z_][a-zA-Z0-9_]*\s*/, "entity.name.function"],
 			[/\</, "punctuation.definition.typeparameters", "@type_group"],
 			[/\(/, "punctuation.definition.parameters", "@function_params"],
-			[/\)/, "punctuation.definition.parameters", "@pop"],
+			[/\)/, "punctuation.definition.parameters", "@pop"]
 		],
 		type_operators: [
 			[/(\~|\-\>)/, "operator.type"],
 			[/[&|?]/, "punctuation.definition.parameters"],
-			[/\.\.\./, "variable.parameter.variadic"],
+			[/\.\.\./, "variable.parameter.variadic"]
 		],
 		type_group: [
 			[/[([]/, "punctuation.definition.parameters", "@type_group"],
@@ -424,14 +424,14 @@ export const language: monaco.languages.IMonarchLanguage = {
 			{ include: "@type_operators" },
 			[/,/, "punctuation"],
 			[/[>]/, "punctuation.definition.typeparameters", "@pop"],
-			[/[)\]}]/, "punctuation.definition.parameters", "@pop"],
+			[/[)\]}]/, "punctuation.definition.parameters", "@pop"]
 		],
 		type_name: [
 			[/\[,/, "punctuation.definition.parameters", "@pop"],
 			[
 				/(\(|\[[^\,])/,
 				"punctuation.definition.parameters",
-				"@type_group",
+				"@type_group"
 			],
 			//[/[\<]/, 'punctuation.definition.typeparameters', '@type_group'],
 			[/[{]/, "punctuation.definition.block", "@table_type_elements"], // { exclusive for type tables
@@ -442,7 +442,7 @@ export const language: monaco.languages.IMonarchLanguage = {
 			//[/->/, 'operator.returns'],
 			//[/[>]/, 'punctuation.definition.typeparameters', '@pop'],
 			{ include: "@type_operators" },
-			[/(?=[)\]},;])/, "punctuation.definition.parameters", "@pop"],
+			[/(?=[)\]},;])/, "punctuation.definition.parameters", "@pop"]
 		],
 		function_params: [
 			[/[([\]]/, "punctuation.definition.parameters"],
@@ -450,13 +450,13 @@ export const language: monaco.languages.IMonarchLanguage = {
 			[/[a-zA-Z_][a-zA-Z0-9_]*/, "variable.parameter.function"],
 			[/: |\?: /, "keyword.operator.type.annotation", "@type_name"],
 			[/,/, "punctuation.separator.arguments"],
-			[/(?=\))/, "", "@pop"],
+			[/(?=\))/, "", "@pop"]
 		],
 
 		whitespace: [
 			[/[ \t\r\n]+/, ""],
 			[/--\[([=]*)\[/, "comment", "@comment.$1"],
-			[/--.*$/, "comment"],
+			[/--.*$/, "comment"]
 		],
 		comment: [
 			[/(?=(\@\w+)((\[\w+\])?\s*)[\{])/, "", "@comment_highlight"],
@@ -467,11 +467,11 @@ export const language: monaco.languages.IMonarchLanguage = {
 				{
 					cases: {
 						"$1==$S2": { token: "comment", next: "@pop" },
-						"@default": "comment",
-					},
-				},
+						"@default": "comment"
+					}
+				}
 			],
-			[/./, "comment"],
+			[/./, "comment"]
 		],
 		comment_highlight: [
 			[/(\@)(\w+\s*)/, ["operator", "comment.highlight.descriptor"]],
@@ -480,12 +480,12 @@ export const language: monaco.languages.IMonarchLanguage = {
 				[
 					"comment.delimiter.modifier",
 					"comment.highlight.modifier",
-					"comment.delimiter.modifier",
-				],
+					"comment.delimiter.modifier"
+				]
 			],
 			[/\{/, "punctuation.definition.parameters", "@type_group"],
 			[/(([^\t]| )[a-z][a-zA-Z0-9_]*)/, "comment.highlight.name", "@pop"],
-			[/./, "@rematch", "@pop"],
+			[/./, "@rematch", "@pop"]
 		],
 		longstring: [
 			[/[^\]]+/, "longstring"],
@@ -495,13 +495,13 @@ export const language: monaco.languages.IMonarchLanguage = {
 					cases: {
 						"$1==$S2": {
 							token: "delimiter.longstring",
-							next: "@pop",
+							next: "@pop"
 						},
-						"@default": "delimiter.longstring",
-					},
-				},
+						"@default": "delimiter.longstring"
+					}
+				}
 			],
-			[/./, "longstring"],
+			[/./, "longstring"]
 		],
 		regexrange: [
 			[/-/, "regexp.escape.control"],
@@ -513,9 +513,9 @@ export const language: monaco.languages.IMonarchLanguage = {
 				{
 					token: "regexp.escape.control",
 					next: "@pop",
-					bracket: "@close",
-				},
-			],
+					bracket: "@close"
+				}
+			]
 		],
 		string: [
 			[/[^\\"'`]+/, "string"],
@@ -527,46 +527,46 @@ export const language: monaco.languages.IMonarchLanguage = {
 					cases: {
 						"$#==$S2": {
 							token: "string.delimeter",
-							next: "@pop",
+							next: "@pop"
 						},
-						"@default": "string",
-					},
-				},
-			],
+						"@default": "string"
+					}
+				}
+			]
 		],
 		string_double: [
 			[/[^\\"]+/, "string"],
 			[/@escapes/, "string.escape"],
 			[/\\./, "string.escape.invalid"],
-			[/"/, "string", "@pop"],
+			[/"/, "string", "@pop"]
 		],
 		string_single: [
 			[/[^\\']+/, "string"],
 			[/@escapes/, "string.escape"],
 			[/\\./, "string.escape.invalid"],
-			[/'/, "string", "@pop"],
+			[/'/, "string", "@pop"]
 		],
 		string_backtick: [
 			[
 				/\{/,
 				{
 					token: "delimiter.bracket",
-					next: "@bracketCounting",
-				},
+					next: "@bracketCounting"
+				}
 			],
 			[/[^\\`\{]+/, "string"],
 			[/@escapes/, "string.escape"],
 			[/\\./, "string.escape.invalid"],
-			[/`/, "string", "@pop"],
+			[/`/, "string", "@pop"]
 		],
 		bracketCounting: [
 			[/\{/, "delimiter.bracket", "@bracketCounting"],
 			[/\}/, "delimiter.bracket", "@pop"],
 			{
-				include: "root",
-			},
-		],
-	},
+				include: "root"
+			}
+		]
+	}
 };
 
 // const delimiters = [".", ":", "("];

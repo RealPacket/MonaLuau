@@ -5,7 +5,7 @@ export function init() {
 		id: "luau",
 		aliases: ["luau", "lua", "RLua"],
 		extensions: [".lua", ".luau", ".rbxs"],
-		mimetypes: ["text/x-luau"],
+		mimetypes: ["text/x-luau"]
 	});
 
 	monaco.languages.setLanguageConfiguration("luau", conf);

@@ -7,7 +7,7 @@ export function initFormatter() {
 	monaco.languages.registerDocumentFormattingEditProvider("luau", formatter);
 	monaco.languages.registerDocumentRangeFormattingEditProvider(
 		"luau",
-		rangeFormatter,
+		rangeFormatter
 	);
 }
 
