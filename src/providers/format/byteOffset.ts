@@ -1,6 +1,5 @@
 import * as monaco from "monaco-editor";
 
-
 export function positionToByteOffset(
 	model: monaco.editor.ITextModel,
 	position: monaco.IPosition,
