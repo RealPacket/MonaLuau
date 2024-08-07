@@ -2,11 +2,13 @@ import "./style.css";
 import * as monaco from "monaco-editor";
 import { initEnv } from "./monacoEnv";
 import { init } from "./languages/luau/init";
+import initProviders from "./providers/init";
 import initThemes from "./theme/register";
 
 //#region Initialize Language, MonacoEnvironment, and Themes
 init();
 initEnv();
+initProviders();
 await initThemes();
 //#endregion
 
